@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Participante" />
+        <activity android:name=".Evento"></activity>
     </application>
 
 </manifest>

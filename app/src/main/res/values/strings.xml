@@ -2,4 +2,12 @@
     <string name="app_name">My Application</string>
     <string name="cadastrar_participante">Cadastrar Participante</string>
     <string name="cadastrar_evento">Cadastrar Evento</string>
+    <string name="nome">Nome</string>
+    <string name="e_mail">E-mail</string>
+    <string name="cpf">CPF</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="titulo">Titulo</string>
+    <string name="hora">Hora</string>
+    <string name="data">Data</string>
+    <string name="descri_o">Descrição</string>
 </resources>
