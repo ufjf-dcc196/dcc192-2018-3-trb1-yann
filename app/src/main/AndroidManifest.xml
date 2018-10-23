@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Participante" />
-        <activity android:name=".Evento"></activity>
+        <activity android:name=".Evento" />
+        <activity android:name=".Adapter"></activity>
     </application>
 
 </manifest>
