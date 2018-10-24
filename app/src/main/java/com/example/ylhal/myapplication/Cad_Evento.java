@@ -20,6 +20,21 @@ public class Cad_Evento extends Activity {
         hora = findViewById(R.id.editHora);
         data = findViewById(R.id.editData);
         descricao = findViewById(R.id.editDesc);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            titulo.setText(extras.getString("Titulo"));
+            hora.setText(extras.getString("Hora"));
+            data.setText(extras.getString("Data"));
+            descricao.setText(extras.getString("Desc"));
+            cadastrarEvento.setText("Salvar");
+            if (!extras.getBoolean("EDIT")) {
+                titulo.setEnabled(false);
+                hora.setEnabled(false);
+                data.setEnabled(false);
+                descricao.setEnabled(false);
+                cadastrarEvento.setVisibility(View.INVISIBLE);
+            }
+        }
         cadastrarEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,4 +48,5 @@ public class Cad_Evento extends Activity {
             }
         });
     }
+
 }
