@@ -1,36 +1,61 @@
 package com.example.ylhal.myapplication;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Evento extends Activity {
-    private Button cadastrar;
-    private TextView titulo, hora, data, descricao;
+public class Evento {
+    private String titulo, data, hora, desc;
+    private List<Participante> participantes;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evento);
-        cadastrar = findViewById(R.id.btn_Cadastrar);
-        titulo = findViewById(R.id.editTitulo);
-        hora = findViewById(R.id.editHora);
-        data = findViewById(R.id.editData);
-        descricao = findViewById(R.id.editDesc);
-        cadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent result = new Intent();
-                result.putExtra("Titulo", titulo.getText().toString());
-                result.putExtra("Data", hora.getText().toString());
-                result.putExtra("Hora", data.getText().toString());
-                result.putExtra("Descrição", descricao.getText().toString());
-                setResult(RESULT_OK, result);
-                finish();
-            }
-        });
+    public Evento(String titulo, String data, String hora, String desc) {
+        this.titulo = titulo;
+        this.data = data;
+        this.hora = hora;
+        this.desc = desc;
+        participantes = new ArrayList();
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public List getParticipantes() {
+        return participantes;
+    }
+
+    public Participante getParticipante(int index) {
+        return participantes.get(index);
+    }
+
+    public void addParticipante(Participante p) {
+        participantes.add(p);
     }
 }
