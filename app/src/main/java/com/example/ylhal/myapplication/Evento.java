@@ -1,6 +1,7 @@
 package com.example.ylhal.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,13 @@ public class Evento extends Activity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent result = new Intent();
+                result.putExtra("Titulo", titulo.getText().toString());
+                result.putExtra("Data", hora.getText().toString());
+                result.putExtra("Hora", data.getText().toString());
+                result.putExtra("Descrição", descricao.getText().toString());
+                setResult(RESULT_OK, result);
+                finish();
             }
         });
     }

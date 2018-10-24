@@ -23,10 +23,9 @@ public class Participante extends Activity {
             @Override
             public void onClick(View v) {
                 Intent result = new Intent();
-                String name = nome.getText().toString(), Email = email.getText().toString(), cpf = CPF.getText().toString();
-                result.putExtra("nome", name);
-                result.putExtra("email", Email);
-                result.putExtra("CPF", cpf);
+                result.putExtra("nome", nome.getText().toString());
+                result.putExtra("email", email.getText().toString());
+                result.putExtra("CPF", CPF.getText().toString());
                 setResult(RESULT_OK, result);
                 finish();
             }

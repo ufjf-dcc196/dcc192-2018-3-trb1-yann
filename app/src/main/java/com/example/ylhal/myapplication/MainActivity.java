@@ -32,7 +32,8 @@ public class MainActivity extends Activity {
         participante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, Participante.class);
+                startActivityForResult(intent, PART_CODE);
             }
         });
     }
