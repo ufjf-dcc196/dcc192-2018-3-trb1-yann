@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
     private Button evento, participante;
     private RecyclerView rv;
+    public static int EVENTO_CODE = 1, PART_CODE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Evento.class);
+                startActivityForResult(intent, EVENTO_CODE);
 
             }
         });
@@ -34,4 +36,19 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MainActivity.EVENTO_CODE &&
+                resultCode == Activity.RESULT_OK && data != null) {
+            String Titulo = data.getStringExtra("Titulo");
+        } else if (requestCode == MainActivity.PART_CODE &&
+                resultCode == Activity.RESULT_OK && data != null) {
+            String nome = data.getStringExtra("nome");
+            String Email = data.getStringExtra("email");
+            String CPF = data.getStringExtra("CPF");
+            // Salvar dados------------------------------------------
+        }
+    }
+
 }
