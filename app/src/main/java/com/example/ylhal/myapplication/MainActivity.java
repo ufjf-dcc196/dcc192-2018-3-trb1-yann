@@ -51,12 +51,16 @@ public class MainActivity extends Activity {
             String dia = data.getStringExtra("Data");
             String hora = data.getStringExtra("Hora");
             String desc = data.getStringExtra("Descrição");
+            if (data.getIntExtra("CAD", 1) > 1)
+                eventos.remove(data.getIntExtra("Index", -1));
             eventos.add(new Evento(titulo, dia, hora, desc));
 
         } else if (requestCode == MainActivity.PART_CODE && resultCode == Activity.RESULT_OK && data != null) {
             String nome = data.getStringExtra("nome");
             String Email = data.getStringExtra("email");
             String CPF = data.getStringExtra("CPF");
+            if (data.getIntExtra("CAD", 1) > 1)
+                participantes.remove(data.getIntExtra("Index", -1));
             participantes.add(new Participante(nome, Email, CPF));
         }
     }
