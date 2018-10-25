@@ -2,23 +2,24 @@ package com.example.ylhal.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class Cad_Participante extends Activity {
-    private Button cadastrar;
-    private TextView nome, email, CPF;
+    private TextView nome, email, CPF, aviso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participante);
-        cadastrar = findViewById(R.id.btn_cadastrar);
+        Button cadastrar = findViewById(R.id.btn_cadastrar);
         nome = findViewById(R.id.editNome);
         email = findViewById(R.id.editEmail);
         CPF = findViewById(R.id.editCPF);
+        aviso = findViewById(R.id.aviso2);
         Bundle extras = getIntent().getExtras();
         final Intent result = new Intent();
         if (extras != null && extras.getInt("CAD") > 1) {
@@ -27,7 +28,6 @@ public class Cad_Participante extends Activity {
             CPF.setText(extras.getString("CPF"));
             cadastrar.setText("Salvar");
             result.putExtra("Index", extras.getInt("Index"));
-            setResult(RESULT_OK, result);
             if (extras.getInt("CAD") == 3) {
                 nome.setEnabled(false);
                 email.setEnabled(false);
@@ -45,10 +45,16 @@ public class Cad_Participante extends Activity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.putExtra("nome", nome.getText().toString());
-                result.putExtra("email", email.getText().toString());
-                result.putExtra("CPF", CPF.getText().toString());
-                finish();
+                if (nome.getText() != null && email.getText() != null && CPF.getText() != null) {
+                    result.putExtra("nome", nome.getText().toString());
+                    result.putExtra("email", email.getText().toString());
+                    result.putExtra("CPF", CPF.getText().toString());
+                    setResult(RESULT_OK, result);
+                    finish();
+                } else {
+                    aviso.setText("Todos os campos devem ser preenchidos");
+                    aviso.setTextColor(Color.RED);
+                }
             }
         });
     }

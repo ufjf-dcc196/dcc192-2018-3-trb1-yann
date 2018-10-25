@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,10 +33,8 @@ public class Cad_Evento extends Activity {
             descricao.setText(extras.getString("Desc"));
             cadastrarEvento.setText("Salvar");
             result.putExtra("Index", extras.getInt("Index"));
-            setResult(RESULT_OK, result);
             if (extras.getInt("CAD") == 3) {
-                //titulo.setEnabled(false);
-                titulo.setInputType(InputType.TYPE_NULL);
+                titulo.setEnabled(false);
                 hora.setEnabled(false);
                 data.setEnabled(false);
                 descricao.setEnabled(false);
@@ -55,6 +52,7 @@ public class Cad_Evento extends Activity {
                     result.putExtra("Hora", data.getText().toString());
                     result.putExtra("Facilitador", facilitador.getText().toString());
                     result.putExtra("Descrição", descricao.getText().toString());
+                    setResult(RESULT_OK, result);
                     finish();
                 } else {
                     aviso.setText("Todos os campos devem ser preenchidos");

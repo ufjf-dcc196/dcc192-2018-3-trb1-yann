@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Evento {
-    private String titulo, data, hora, desc;
+    private String titulo, data, hora, faci, desc;
     private List<Participante> participantes;
 
-    public Evento(String titulo, String data, String hora, String desc) {
+    public Evento(String titulo, String data, String hora, String facilitador, String desc) {
         this.titulo = titulo;
         this.data = data;
         this.hora = hora;
+        this.faci = facilitador;
         this.desc = desc;
         participantes = new ArrayList();
     }
@@ -39,12 +40,20 @@ public class Evento {
         this.hora = hora;
     }
 
-    public String getDesc() {
+    public String getDescricao() {
         return desc;
     }
 
-    public void setDesc(String desc) {
+    public void setDescricao(String desc) {
         this.desc = desc;
+    }
+
+    public String getFacilitador() {
+        return this.faci;
+    }
+
+    public void setFacilitador(String facilitador) {
+        this.faci = facilitador;
     }
 
     public List getParticipantes() {
