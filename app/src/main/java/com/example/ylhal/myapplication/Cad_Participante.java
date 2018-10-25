@@ -19,8 +19,8 @@ public class Cad_Participante extends Activity {
         nome = findViewById(R.id.editNome);
         email = findViewById(R.id.editEmail);
         CPF = findViewById(R.id.editCPF);
-        final Intent result = new Intent();
         Bundle extras = getIntent().getExtras();
+        final Intent result = new Intent();
         if (extras != null && extras.getInt("CAD") > 1) {
             nome.setText(extras.getString("Nome"));
             email.setText(extras.getString("Email"));
@@ -32,8 +32,14 @@ public class Cad_Participante extends Activity {
                 nome.setEnabled(false);
                 email.setEnabled(false);
                 CPF.setEnabled(false);
-                cadastrar.setVisibility(View.INVISIBLE);
-                setResult(RESULT_CANCELED, result);
+                cadastrar.setText("Voltar");
+                cadastrar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        setResult(RESULT_CANCELED, result);
+                        finish();
+                    }
+                });
             }
         }
         cadastrar.setOnClickListener(new View.OnClickListener() {

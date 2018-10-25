@@ -2,6 +2,7 @@ package com.example.ylhal.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 public class Cad_Evento extends Activity {
     private Button cadastrarEvento;
-    private TextView titulo, hora, data, descricao;
+    private TextView titulo, hora, data, facilitador, descricao, aviso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +21,16 @@ public class Cad_Evento extends Activity {
         titulo = findViewById(R.id.editTitulo);
         hora = findViewById(R.id.editHora);
         data = findViewById(R.id.editData);
+        facilitador = findViewById(R.id.editFacilitador);
         descricao = findViewById(R.id.editDesc);
-        final Intent result = new Intent();
+        aviso = findViewById(R.id.aviso);
         Bundle extras = getIntent().getExtras();
+        final Intent result = new Intent();
         if (extras != null && extras.getInt("CAD") > 1) {
             titulo.setText(extras.getString("Titulo"));
             hora.setText(extras.getString("Hora"));
             data.setText(extras.getString("Data"));
+            facilitador.setText(extras.getString("Facilitador"));
             descricao.setText(extras.getString("Desc"));
             cadastrarEvento.setText("Salvar");
             result.putExtra("Index", extras.getInt("Index"));
@@ -37,18 +41,25 @@ public class Cad_Evento extends Activity {
                 hora.setEnabled(false);
                 data.setEnabled(false);
                 descricao.setEnabled(false);
-                cadastrarEvento.setVisibility(View.INVISIBLE);
+                cadastrarEvento.setText("Voltar");
                 setResult(RESULT_CANCELED, result);
+                finish();
             }
         }
         cadastrarEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.putExtra("Titulo", titulo.getText().toString());
-                result.putExtra("Data", hora.getText().toString());
-                result.putExtra("Hora", data.getText().toString());
-                result.putExtra("Descrição", descricao.getText().toString());
-                finish();
+                if (titulo.getText() != null && hora.getText() != null && data.getText() != null && facilitador.getText() != null && descricao.getText() != null) {
+                    result.putExtra("Titulo", titulo.getText().toString());
+                    result.putExtra("Data", hora.getText().toString());
+                    result.putExtra("Hora", data.getText().toString());
+                    result.putExtra("Facilitador", facilitador.getText().toString());
+                    result.putExtra("Descrição", descricao.getText().toString());
+                    finish();
+                } else {
+                    aviso.setText("Todos os campos devem ser preenchidos");
+                    aviso.setTextColor(Color.RED);
+                }
             }
         });
     }
