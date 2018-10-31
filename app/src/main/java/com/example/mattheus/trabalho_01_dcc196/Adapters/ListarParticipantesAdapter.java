@@ -1,4 +1,4 @@
-package com.example.mattheus.trabalho_01_dcc196;
+package com.example.mattheus.trabalho_01_dcc196.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
+import com.example.mattheus.trabalho_01_dcc196.R;
 
 import java.util.ArrayList;
 
@@ -23,7 +26,7 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
         this.listener = listener;
     }
 
-    ListarParticipantesAdapter(ArrayList<Participante> participantes) {
+    public ListarParticipantesAdapter(ArrayList<Participante> participantes) {
         this.participantes = participantes;
 
     }

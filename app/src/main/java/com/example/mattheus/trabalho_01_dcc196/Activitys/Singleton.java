@@ -1,4 +1,7 @@
-package com.example.mattheus.trabalho_01_dcc196;
+package com.example.mattheus.trabalho_01_dcc196.Activitys;
+
+import com.example.mattheus.trabalho_01_dcc196.Objetos.Evento;
+import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
 
 import java.util.ArrayList;
 
@@ -34,7 +37,7 @@ public class Singleton {
         return instance;
     }
 
-    ArrayList<Evento> getEventos() {
+    public ArrayList<Evento> getEventos() {
         return eventos;
     }
 
@@ -64,7 +67,7 @@ public class Singleton {
         }
     }
 
-    ArrayList<Participante> getParticipantes() {
+    public ArrayList<Participante> getParticipantes() {
         return participantes;
     }
 

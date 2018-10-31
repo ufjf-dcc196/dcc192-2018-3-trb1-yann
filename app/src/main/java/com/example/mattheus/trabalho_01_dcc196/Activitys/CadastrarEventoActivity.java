@@ -1,4 +1,4 @@
-package com.example.mattheus.trabalho_01_dcc196;
+package com.example.mattheus.trabalho_01_dcc196.Activitys;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.mattheus.trabalho_01_dcc196.Objetos.Evento;
+import com.example.mattheus.trabalho_01_dcc196.R;
 
 public class CadastrarEventoActivity extends AppCompatActivity {
     private EditText txt_titulo, txt_dia, txt_hora, txt_facilitador, txt_desc;

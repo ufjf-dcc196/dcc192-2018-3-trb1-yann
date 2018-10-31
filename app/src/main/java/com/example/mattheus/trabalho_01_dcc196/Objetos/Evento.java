@@ -1,4 +1,4 @@
-package com.example.mattheus.trabalho_01_dcc196;
+package com.example.mattheus.trabalho_01_dcc196.Objetos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class Evento {
     private String titulo, data, hora, faci, desc;
     private ArrayList<Participante> participantes;
 
-    Evento(String titulo, String data, String hora, String facilitador, String desc) {
+    public Evento(String titulo, String data, String hora, String facilitador, String desc) {
         this.titulo = titulo;
         this.data = data;
         this.hora = hora;
@@ -16,7 +16,7 @@ public class Evento {
         participantes = new ArrayList<>();
     }
 
-    String getTitulo() {
+    public String getTitulo() {
         return titulo;
     }
 
@@ -56,7 +56,7 @@ public class Evento {
         this.faci = facilitador;
     }
 
-    List getParticipantes() {
+    public List getParticipantes() {
         return participantes;
     }
 
@@ -64,11 +64,11 @@ public class Evento {
         return participantes.get(index);
     }
 
-    void addParticipante(Participante p) {
+    public void addParticipante(Participante p) {
         participantes.add(p);
     }
 
-    void removeParticipante(Participante p) {
+    public void removeParticipante(Participante p) {
         participantes.remove(p);
     }
 }

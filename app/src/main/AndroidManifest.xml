@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastrarParticipanteActivity" />
-        <activity android:name=".CadastrarEventoActivity" />
-        <activity android:name=".ListarParticipantesActivity" />
-        <activity android:name=".ListarMeusEventosAdapter" />
-        <activity android:name=".ListaEventoParaParticipante"></activity>
+        <activity android:name=".Activitys.CadastrarParticipanteActivity" />
+        <activity android:name=".Activitys.CadastrarEventoActivity" />
+        <activity android:name=".Activitys.ListarParticipantesActivity" />
+        <activity android:name=".Activitys.EditarParticipante" />
+        <activity android:name=".Activitys.EditarEvento"></activity>
     </application>
 
 </manifest>
