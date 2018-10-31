@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".Activitys.CadastrarParticipanteActivity" />
         <activity android:name=".Activitys.CadastrarEventoActivity" />
-        <activity android:name=".Activitys.ListarParticipantesActivity" />
         <activity android:name=".Activitys.EditarParticipante" />
         <activity android:name=".Activitys.EditarEvento" />
         <activity android:name=".Activitys.ListarEventosParaParticipante" />
