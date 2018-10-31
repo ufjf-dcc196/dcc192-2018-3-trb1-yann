@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Evento {
     private String titulo, data, hora, faci, desc;
-    private List<Participante> participantes;
+    private ArrayList<Participante> participantes;
 
-    public Evento(String titulo, String data, String hora, String facilitador, String desc) {
+    Evento(String titulo, String data, String hora, String facilitador, String desc) {
         this.titulo = titulo;
         this.data = data;
         this.hora = hora;
         this.faci = facilitador;
         this.desc = desc;
-        participantes = new ArrayList();
+        participantes = new ArrayList<>();
     }
 
-    public String getTitulo() {
+    String getTitulo() {
         return titulo;
     }
 
@@ -56,7 +56,7 @@ public class Evento {
         this.faci = facilitador;
     }
 
-    public List getParticipantes() {
+    List getParticipantes() {
         return participantes;
     }
 
@@ -64,10 +64,11 @@ public class Evento {
         return participantes.get(index);
     }
 
-    public void addParticipante(Participante p) {
+    void addParticipante(Participante p) {
         participantes.add(p);
     }
-    public void removeParticipante(Participante p){
+
+    void removeParticipante(Participante p) {
         participantes.remove(p);
     }
 }

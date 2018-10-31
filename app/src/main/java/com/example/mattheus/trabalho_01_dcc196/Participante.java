@@ -6,14 +6,14 @@ public class Participante {
     private String nome, email, cpf;
     private ArrayList<Evento> eventos;
 
-    public Participante(String nome, String email, String cpf) {
+    Participante(String nome, String email, String cpf) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
-        eventos = new ArrayList();
+        eventos = new ArrayList<>();
     }
 
-    public String getNome() {
+    String getNome() {
         return nome;
     }
 
@@ -37,7 +37,7 @@ public class Participante {
         this.cpf = cpf;
     }
 
-    public ArrayList<Evento> getEventos() {
+    ArrayList<Evento> getEventos() {
         return eventos;
     }
 
@@ -49,7 +49,7 @@ public class Participante {
         eventos.add(evento);
     }
 
-    public void removeEvento(Evento e){
+    void removeEvento(Evento e) {
         eventos.remove(e);
     }
 }

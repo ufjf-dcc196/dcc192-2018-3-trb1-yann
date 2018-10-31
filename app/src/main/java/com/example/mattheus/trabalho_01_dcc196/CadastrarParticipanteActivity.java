@@ -2,15 +2,14 @@ package com.example.mattheus.trabalho_01_dcc196;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class CadastrarParticipanteActivity extends AppCompatActivity {
     private EditText txt_nome_participante, txt_email_participante, txt_cpf_participante;
-    private Button btn_salvar_participante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +19,7 @@ public class CadastrarParticipanteActivity extends AppCompatActivity {
         txt_nome_participante = findViewById(R.id.txt_Nome_Participante);
         txt_email_participante = findViewById(R.id.txt_Email_Participante);
         txt_cpf_participante = findViewById(R.id.txt_cpf_Participante);
-        btn_salvar_participante = findViewById(R.id.btn_salvar_participante);
-
-        Bundle extras = getIntent().getExtras();
+        Button btn_salvar_participante = findViewById(R.id.btn_salvar_participante);
 
         btn_salvar_participante.setOnClickListener(new View.OnClickListener() {
             @Override

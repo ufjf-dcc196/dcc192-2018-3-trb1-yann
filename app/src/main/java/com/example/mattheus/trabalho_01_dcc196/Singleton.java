@@ -1,7 +1,6 @@
 package com.example.mattheus.trabalho_01_dcc196;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Singleton {
 
@@ -35,11 +34,11 @@ public class Singleton {
         return instance;
     }
 
-    public ArrayList<Evento> getEventos() {
+    ArrayList<Evento> getEventos() {
         return eventos;
     }
 
-    public void addEvento(Evento e) {
+    void addEvento(Evento e) {
         this.eventos.add(e);
     }
 
@@ -65,11 +64,11 @@ public class Singleton {
         }
     }
 
-    public ArrayList<Participante> getParticipantes() {
+    ArrayList<Participante> getParticipantes() {
         return participantes;
     }
 
-    public void addParticipante(Participante p) {
+    void addParticipante(Participante p) {
         participantes.add(p);
     }
 

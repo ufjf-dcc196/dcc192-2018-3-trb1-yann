@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParticipantesAdapter.ViewHolder> {
-    private ArrayList<Participante> participantes = new ArrayList<>();
+    private ArrayList<Participante> participantes;
     private OnParticipanteClickListener listener;
 
 
@@ -24,7 +24,7 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
         this.listener = listener;
     }
 
-    public ListarParticipantesAdapter(ArrayList<Participante> participantes) {
+    ListarParticipantesAdapter(ArrayList<Participante> participantes) {
         this.participantes = participantes;
 
     }
@@ -36,8 +36,7 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View lstParticipantesView = inflater.inflate(R.layout.recycle_view_listar_participantes, viewGroup, false);
-        ViewHolder holder = new ViewHolder(lstParticipantesView);
-        return holder;
+        return new ViewHolder(lstParticipantesView);
     }
 
     @Override
@@ -51,9 +50,9 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-        public TextView txtNomeParticpante;
+        TextView txtNomeParticpante;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
 
             txtNomeParticpante= itemView.findViewById(R.id.txt_lista_dos_participantes);

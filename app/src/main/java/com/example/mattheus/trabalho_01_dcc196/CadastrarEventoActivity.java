@@ -2,15 +2,14 @@ package com.example.mattheus.trabalho_01_dcc196;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class CadastrarEventoActivity extends AppCompatActivity {
     private EditText txt_titulo, txt_dia, txt_hora, txt_facilitador, txt_desc;
-    private Button btn_salvar_evento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
         txt_hora = findViewById(R.id.txt_hora_evento);
         txt_facilitador = findViewById(R.id.txt_facilitador_evento);
         txt_desc = findViewById(R.id.txt_descrição_evento);
-        btn_salvar_evento = findViewById(R.id.btn_salvar_evento);
+        Button btn_salvar_evento = findViewById(R.id.btn_salvar_evento);
 
         btn_salvar_evento.setOnClickListener(new View.OnClickListener() {
             @Override

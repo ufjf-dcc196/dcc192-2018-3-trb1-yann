@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdapter.ViewHolder>{
 
 
-    private ArrayList<Evento> eventos = new ArrayList<>();
+    private ArrayList<Evento> eventos;
     private OnEventoClickListener listener;
 
     public interface OnEventoClickListener {
@@ -25,7 +25,7 @@ public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdap
         this.listener = listener;
     }
 
-    public ListarEventosAdapter(ArrayList<Evento> eventos) {
+    ListarEventosAdapter(ArrayList<Evento> eventos) {
         this.eventos = eventos;
     }
 
@@ -37,8 +37,7 @@ public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdap
         LayoutInflater inflater = LayoutInflater.from(context);
         View lstEventoView;
         lstEventoView = inflater.inflate(R.layout.recycle_view_listar_eventos, viewGroup, false);
-        ViewHolder holderView = new ViewHolder(lstEventoView);
-        return holderView;
+        return new ViewHolder(lstEventoView);
     }
 
 
@@ -54,8 +53,9 @@ public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdap
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
-        public TextView txtTituloEvento;
-        public ViewHolder(View itemView) {
+        TextView txtTituloEvento;
+
+        ViewHolder(View itemView) {
             super(itemView);
 
             txtTituloEvento = itemView.findViewById(R.id.txt_lista_dos_eventos);
@@ -84,8 +84,6 @@ public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdap
                     }
                 }
             });
-
-
         }
 
         @Override
