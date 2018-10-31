@@ -58,7 +58,7 @@ public class Singleton {
         return -1;
     }
 
-    public void removeParticipanteEvento(Participante p) {
+    public void removeParticipanteEventos(Participante p) {
         for (Evento e : Singleton.getInstance().getEventos()) {
             if (e.getParticipantes().contains(p)) {
                 int i = Singleton.getInstance().getEventos().indexOf(e);
