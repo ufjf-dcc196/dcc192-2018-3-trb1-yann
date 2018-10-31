@@ -17,18 +17,19 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
     private ArrayList<Participante> participantes;
     private OnParticipanteClickListener listener;
 
-    public interface OnParticipanteClickListener {
-        void onParticipanteClick(View view, int position);
-        void onLongParticipanteClick(View view, int position);
-    }
-
-    public void setOnParticipanteClickListener(OnParticipanteClickListener listener){
-        this.listener = listener;
-    }
-
     public ListarParticipantesAdapter(ArrayList<Participante> participantes) {
         this.participantes = participantes;
 
+    }
+
+    public void setOnParticipanteClickListener(OnParticipanteClickListener listener) {
+        this.listener = listener;
+    }
+
+    public interface OnParticipanteClickListener {
+        void onParticipanteClick(View view, int position);
+
+        void onLongParticipanteClick(View view, int position);
     }
 
     @NonNull
