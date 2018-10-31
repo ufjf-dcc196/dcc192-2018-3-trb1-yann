@@ -3,7 +3,6 @@ package com.example.mattheus.trabalho_01_dcc196.Activitys;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,7 @@ import android.widget.EditText;
 import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
 import com.example.mattheus.trabalho_01_dcc196.R;
 
-public class CadastrarParticipanteActivity extends AppCompatActivity {
+public class CadastrarParticipanteActivity extends Activity {
     private EditText txt_nome_participante, txt_email_participante, txt_cpf_participante;
 
     @Override
@@ -36,6 +35,5 @@ public class CadastrarParticipanteActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

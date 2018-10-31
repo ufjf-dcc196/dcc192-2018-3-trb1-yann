@@ -3,7 +3,6 @@ package com.example.mattheus.trabalho_01_dcc196.Activitys;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,7 +13,7 @@ import com.example.mattheus.trabalho_01_dcc196.Adapters.ListarMeusEventosAdapter
 import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
 import com.example.mattheus.trabalho_01_dcc196.R;
 
-public class EditarParticipante extends AppCompatActivity {
+public class EditarParticipante extends Activity {
 
     public static final String POSICAO_PARTICIPANTE = "Posição Participante";
     public static final String POSICAO_EVENTO = "Posição Evento";

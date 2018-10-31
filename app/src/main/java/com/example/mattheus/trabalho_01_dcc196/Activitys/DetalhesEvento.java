@@ -18,9 +18,7 @@ public class DetalhesEvento extends Activity {
     public static final String POSICAO_EVENTO = "Posiçao do Evento";
     private static final int REQUEST_ATUALIZAR_EVENTO = 1;
 
-    private RecyclerView rvParticipantesEvento;
     private ListarParticipantesAdapter adapter;
-    private Button btnEditarInfoEvento;
     private TextView txtTitulo, txtData, txtHorario, txtFacilitador, txtDescricao;
     private int posicaoEvento;
     private int posicaoParticipante;
@@ -36,13 +34,15 @@ public class DetalhesEvento extends Activity {
         txtDescricao = findViewById(R.id.act_detalhes_evento_Descricao);
         txtFacilitador = findViewById(R.id.act_detalhes_evento_Facilitador);
         txtHorario = findViewById(R.id.act_detalhes_evento_Hora);
-        rvParticipantesEvento = findViewById(R.id.rcDetalhesEvento);
-        btnEditarInfoEvento = findViewById(R.id.act_detalhes_evento_btnEdit);
+        RecyclerView rvParticipantesEvento = findViewById(R.id.rcDetalhesEvento);
+        Button btnEditarInfoEvento = findViewById(R.id.act_detalhes_evento_btnEdit);
 
-        posicaoEvento = bundleResult.getInt(ListarEventos.POSICAO_EVENTO);
+        if (bundleResult != null) {
+            posicaoEvento = bundleResult.getInt(ListarEventos.POSICAO_EVENTO);
+        }
 
         setInformacoes();
-        if (bundleResult.getBoolean(ListarEventosParaParticipanteActivity.ORIGEM_PARTICIPANTE)) {
+        if (bundleResult.getBoolean(ListarEventosParaParticipante.ORIGEM_PARTICIPANTE)) {
             btnEditarInfoEvento.setEnabled(false);
         }
         adapter = new ListarParticipantesAdapter(Singleton.getInstance().getEventos().get(posicaoEvento).getParticipantes());

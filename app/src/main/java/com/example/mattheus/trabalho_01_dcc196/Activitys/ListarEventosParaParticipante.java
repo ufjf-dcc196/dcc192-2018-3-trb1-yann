@@ -13,7 +13,7 @@ import com.example.mattheus.trabalho_01_dcc196.R;
 
 import java.util.ArrayList;
 
-public class ListarEventosParaParticipanteActivity extends Activity {
+public class ListarEventosParaParticipante extends Activity {
     public static final String ORIGEM_PARTICIPANTE = "Origem de onde foi chamada a activity";
     private ArrayList<Evento> eventos = new ArrayList<>();
     private RecyclerView rvEventosParaParticipante;
@@ -49,14 +49,13 @@ public class ListarEventosParaParticipanteActivity extends Activity {
 
             @Override
             public void onLongEventoParaParticipanteClick(View view, int position) {
-                Intent attPart = new Intent(ListarEventosParaParticipanteActivity.this, DetalhesEvento.class);
+                Intent attPart = new Intent(ListarEventosParaParticipante.this, DetalhesEvento.class);
                 int i = Singleton.getInstance().getEventos().indexOf(eventos.get(position));
                 attPart.putExtra(ListarEventos.POSICAO_EVENTO, i);
-                attPart.putExtra(ListarEventosParaParticipanteActivity.ORIGEM_PARTICIPANTE, true);
+                attPart.putExtra(ListarEventosParaParticipante.ORIGEM_PARTICIPANTE, true);
                 startActivity(attPart);
             }
         });
-
     }
 
     private void instanciaEventos(int posicaoParticipante) {
