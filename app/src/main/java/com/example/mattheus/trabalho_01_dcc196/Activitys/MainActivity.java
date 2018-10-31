@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mattheus.trabalho_01_dcc196.Adapters.ListarParticipantesAdapter;
-import com.example.mattheus.trabalho_01_dcc196.Objetos.Evento;
 import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
 import com.example.mattheus.trabalho_01_dcc196.R;
 
@@ -95,11 +94,6 @@ public class MainActivity extends Activity {
 
             participanteAdapter.notifyDataSetChanged();
 
-        } else if (requestCode == MainActivity.REQUEST_CADASTRO_EVENTO && resultCode == Activity.RESULT_OK && data != null) {
-
-            Bundle bundleResultado = data.getExtras();
-            Evento e = new Evento(bundleResultado.getString(MainActivity.TITULO_EVENTO), bundleResultado.getString(MainActivity.DATA), bundleResultado.getString(MainActivity.HORA), bundleResultado.getString(MainActivity.FACILITADOR), bundleResultado.getString(MainActivity.DESCRICAO_EVENTO));
-            Singleton.getInstance().addEvento(e);
         }
     }
 }

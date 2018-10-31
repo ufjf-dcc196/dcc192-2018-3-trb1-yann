@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.mattheus.trabalho_01_dcc196.Objetos.Participante;
 import com.example.mattheus.trabalho_01_dcc196.R;
 
 public class CadastrarParticipanteActivity extends Activity {
@@ -27,9 +26,9 @@ public class CadastrarParticipanteActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent resultado = new Intent();
-                Participante p = new Participante(txt_nome_participante.getText().toString(),txt_email_participante.getText().toString(),txt_cpf_participante.getText().toString());
-
-                Singleton.getInstance().addParticipante(p);
+                resultado.putExtra(MainActivity.NOME_PARTICIPANTE, txt_nome_participante.getText().toString());
+                resultado.putExtra(MainActivity.EMAIL_PARTICIPANTE, txt_email_participante.getText().toString());
+                resultado.putExtra(MainActivity.CPF_PARTICIPANTE, txt_cpf_participante.getText().toString());
 
                 setResult(Activity.RESULT_OK, resultado);
                 finish();

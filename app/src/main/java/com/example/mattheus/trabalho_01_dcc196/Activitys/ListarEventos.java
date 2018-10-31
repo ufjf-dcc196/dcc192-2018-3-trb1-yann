@@ -19,7 +19,6 @@ public class ListarEventos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_eventos);
 
-
         RecyclerView rcListaEvento = findViewById(R.id.rclistaevento);
 
         rcListaEvento.setLayoutManager(new LinearLayoutManager(this));

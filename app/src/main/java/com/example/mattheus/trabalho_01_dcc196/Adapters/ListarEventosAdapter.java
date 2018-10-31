@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class ListarEventosAdapter extends RecyclerView.Adapter<ListarEventosAdapter.ViewHolder>{
 
-
     private ArrayList<Evento> eventos;
     private OnEventoClickListener listener;
 

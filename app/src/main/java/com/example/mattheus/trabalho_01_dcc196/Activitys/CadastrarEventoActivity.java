@@ -29,7 +29,6 @@ public class CadastrarEventoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent resultado = new Intent();
-
                 Evento e = new Evento(txt_titulo.getText().toString(), txt_dia.getText().toString(),txt_hora.getText().toString(), txt_facilitador.getText().toString(),txt_desc.getText().toString());
                 Singleton.getInstance().addEvento(e);
 
