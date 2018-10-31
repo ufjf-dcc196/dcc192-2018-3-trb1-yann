@@ -49,7 +49,7 @@ public class ListarEventosParaParticipanteActivity extends Activity {
 
             @Override
             public void onLongEventoParaParticipanteClick(View view, int position) {
-                Intent attPart = new Intent(ListarEventosParaParticipanteActivity.this, DetalhesEventoActivity.class);
+                Intent attPart = new Intent(ListarEventosParaParticipanteActivity.this, DetalhesEvento.class);
                 int i = Singleton.getInstance().getEventos().indexOf(eventos.get(position));
                 attPart.putExtra(ListarEventos.POSICAO_EVENTO, i);
                 attPart.putExtra(ListarEventosParaParticipanteActivity.ORIGEM_PARTICIPANTE, true);

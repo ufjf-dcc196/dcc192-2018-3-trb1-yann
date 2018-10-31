@@ -55,7 +55,7 @@ public class Evento {
         this.faci = facilitador;
     }
 
-    public ArrayList getParticipantes() {
+    public ArrayList<Participante> getParticipantes() {
         return participantes;
     }
 

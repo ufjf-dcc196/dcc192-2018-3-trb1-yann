@@ -12,7 +12,6 @@ import com.example.mattheus.trabalho_01_dcc196.R;
 
 public class ListarEventos extends Activity {
     public static final String POSICAO_EVENTO = "Posição Evento";
-    private RecyclerView rcListaEvento;
     private ListarEventosAdapter listaEventosAdapter;
 
     @Override
@@ -21,7 +20,7 @@ public class ListarEventos extends Activity {
         setContentView(R.layout.activity_listar_eventos);
 
 
-        rcListaEvento = findViewById(R.id.rclistaevento);
+        RecyclerView rcListaEvento = findViewById(R.id.rclistaevento);
 
         rcListaEvento.setLayoutManager(new LinearLayoutManager(this));
 
@@ -32,7 +31,7 @@ public class ListarEventos extends Activity {
         listaEventosAdapter.setOnEventoClickListener(new ListarEventosAdapter.OnEventoClickListener() {
             @Override
             public void onEventoClick(View view, int position) {
-                Intent intent = new Intent(ListarEventos.this, DetalhesEventoActivity.class);
+                Intent intent = new Intent(ListarEventos.this, DetalhesEvento.class);
                 intent.putExtra(ListarEventos.POSICAO_EVENTO, position);
                 intent.putExtra(ListarEventosParaParticipanteActivity.ORIGEM_PARTICIPANTE, false);
                 startActivity(intent);

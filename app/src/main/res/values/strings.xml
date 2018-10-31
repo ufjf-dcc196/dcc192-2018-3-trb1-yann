@@ -10,4 +10,10 @@
     <string name="View_Participantes">Ver Participantes:</string>
     <string name="btn_salvar_evento">Salvar Evento</string>
     <string name="text">TextView</string>
+    <string name="editar">Editar detalhes do evento</string>
+    <string name="titulo">Titulo:</string>
+    <string name="data">Data:</string>
+    <string name="hora">Hora:</string>
+    <string name="facilitador">Facilitador:</string>
+    <string name="descricao">Descrição:</string>
 </resources>
