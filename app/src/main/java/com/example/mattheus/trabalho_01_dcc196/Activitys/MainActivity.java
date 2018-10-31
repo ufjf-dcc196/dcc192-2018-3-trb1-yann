@@ -16,6 +16,18 @@ public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CADASTRO_PARTICIPANTE = 1;
     public static final int REQUEST_CADASTRO_EVENTO = 2;
     public static final int REQUEST_LISTAR_EVENTO = 3;
+    public static final String POSICAO_PARTICIPANTE = "POS";
+
+    public static final String NOME_PARTICPANTE = "NOME";
+    public static final String EMAIL_PARTICPANTE = "EMAIL";
+    public static final String CPF_PARTICPANTE = "CPF";
+    public static final String MATRICULA_PARTICPANTE = "MATRICULA";
+
+    public static final String TITULO_EVENTO = "TITULO";
+    public static final String DESCRICAO_EVENTO = "DESCRICAO";
+    public static final String FACILITADOR = "FACILITADOR";
+    public static final String DATA = "DATA";
+    public static final String HORA = "HORA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
