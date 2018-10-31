@@ -19,9 +19,9 @@ public class MainActivity extends Activity {
     public static final int REQUEST_CADASTRO_PARTICIPANTE = 2;
     public static final int REQUEST_DETALHES_PARTICIPANTE = 3;
     public static final String POSICAO_PARTICIPANTE = "POS";
-    public static final String NOME_PARTICPANTE = "NOME";
-    public static final String EMAIL_PARTICPANTE = "EMAIL";
-    public static final String CPF_PARTICPANTE = "CPF";
+    public static final String NOME_PARTICIPANTE = "NOME";
+    public static final String EMAIL_PARTICIPANTE = "EMAIL";
+    public static final String CPF_PARTICIPANTE = "CPF";
     public static final String TITULO_EVENTO = "TITULO";
     public static final String DESCRICAO_EVENTO = "DESCRICAO";
     public static final String FACILITADOR = "FACILITADOR";
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     public static final String HORA = "HORA";
     private RecyclerView rvMain;
     private Button cadparticipante, cadevento, listeventos;
-    private ListarParticipantesAdapter particpanteAdapter;
+    private ListarParticipantesAdapter participanteAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +41,13 @@ public class MainActivity extends Activity {
 
         rvMain.setLayoutManager(new LinearLayoutManager(this));
 
-        particpanteAdapter = new ListarParticipantesAdapter(Singleton.getInstance().getParticipantes());
+        participanteAdapter = new ListarParticipantesAdapter(Singleton.getInstance().getParticipantes());
 
-        rvMain.setAdapter(particpanteAdapter);
+        rvMain.setAdapter(participanteAdapter);
 
         cadparticipante = findViewById(R.id.btn_Cadastrar_Participante);
 
-        particpanteAdapter.setOnParticipanteClickListener(new ListarParticipantesAdapter.OnParticipanteClickListener() {
+        participanteAdapter.setOnParticipanteClickListener(new ListarParticipantesAdapter.OnParticipanteClickListener() {
             @Override
             public void onParticipanteClick(View view, int position) {
                 Intent intent = new Intent(MainActivity.this, EditarParticipante.class);
@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
             public void onLongParticipanteClick(View view, int position) {
                 Singleton.getInstance().removeParticipanteEventos(Singleton.getInstance().getParticipantes().get(position));
                 Singleton.getInstance().removeParticipante(Singleton.getInstance().getParticipantes().get(position));
-                particpanteAdapter.notifyItemRemoved(position);
+                participanteAdapter.notifyItemRemoved(position);
             }
         });
 
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        listeventos = findViewById(R.id.btn_View_Participantes);
+        listeventos = findViewById(R.id.btn_View_Eventos);
         listeventos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,10 +100,10 @@ public class MainActivity extends Activity {
 
         if (requestCode == MainActivity.REQUEST_CADASTRO_PARTICIPANTE && resultCode == Activity.RESULT_OK && data != null) {
             Bundle bundleResultado = data.getExtras();
-            Participante p = new Participante(bundleResultado.getString(MainActivity.NOME_PARTICPANTE), bundleResultado.getString(MainActivity.EMAIL_PARTICPANTE), bundleResultado.getString(MainActivity.CPF_PARTICPANTE));
+            Participante p = new Participante(bundleResultado.getString(MainActivity.NOME_PARTICIPANTE), bundleResultado.getString(MainActivity.EMAIL_PARTICIPANTE), bundleResultado.getString(MainActivity.CPF_PARTICIPANTE));
             Singleton.getInstance().addParticipante(p);
 
-            particpanteAdapter.notifyDataSetChanged();
+            participanteAdapter.notifyDataSetChanged();
 
         } else if (requestCode == MainActivity.REQUEST_CADASTRO_EVENTO && resultCode == Activity.RESULT_OK && data != null) {
 

@@ -33,7 +33,7 @@ public class ListarEventos extends Activity {
             public void onEventoClick(View view, int position) {
                 Intent intent = new Intent(ListarEventos.this, DetalhesEvento.class);
                 intent.putExtra(ListarEventos.POSICAO_EVENTO, position);
-                intent.putExtra(ListarEventosParaParticipanteActivity.ORIGEM_PARTICIPANTE, false);
+                intent.putExtra(ListarEventosParaParticipante.ORIGEM_PARTICIPANTE, false);
                 startActivity(intent);
             }
 

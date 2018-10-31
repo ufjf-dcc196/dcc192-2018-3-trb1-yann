@@ -17,6 +17,7 @@
         android:layout_marginRight="8dp"
         android:inputType="textPersonName"
         android:text="Cadastrar Evento"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_Evento_Nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +33,7 @@
         android:layout_marginRight="8dp"
         android:hint="Nome do Evento"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_evento_Data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -47,6 +49,7 @@
         android:layout_marginRight="8dp"
         android:hint="Data do Evento"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_evento_Horario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +66,7 @@
         android:layout_marginRight="8dp"
         android:hint="Horario"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_evento_Facilitador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +83,7 @@
         android:layout_marginRight="8dp"
         android:hint="Facilitador"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_evento_Descricao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +100,7 @@
         android:layout_marginRight="8dp"
         android:hint="Descrição"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/act_att_evento_btnOk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +108,7 @@
 
     <Button
         android:id="@+id/act_att_evento_btnOk"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -113,7 +119,6 @@
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/act_att_evento_Descricao"
         app:layout_constraintVertical_bias="0.0" />
