@@ -31,6 +31,9 @@ public class Singleton {
         eventos.add(e1);
         eventos.add(e2);
         eventos.add(e3);
+        p1.addEvento(e1);
+        p2.addEvento(e2);
+        p3.addEvento(e3);
     }
 
     public static Singleton getInstance(){

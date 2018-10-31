@@ -17,8 +17,8 @@ public class ListaEventoParaParticipanteAdapter extends RecyclerView.Adapter<Lis
     private ArrayList<Evento> eventos;
     private OnEventoParaParticipanteClickListener listener;
 
-    public ListaEventoParaParticipanteAdapter(ArrayList<Evento> eventos) {
-        this.eventos = eventos;
+    public ListaEventoParaParticipanteAdapter(ArrayList<Evento> e) {
+        this.eventos = e;
     }
 
     public void setOnEventoParaParticipanteClickListener(OnEventoParaParticipanteClickListener listener) {
