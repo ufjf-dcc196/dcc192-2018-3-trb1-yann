@@ -14,14 +14,12 @@ import com.example.mattheus.trabalho_01_dcc196.R;
 
 public class DetalhesEvento extends Activity {
 
-    public static final String POSICAO_PARTICIPANTE = "Posição Participante";
     public static final String POSICAO_EVENTO = "Posiçao do Evento";
     private static final int REQUEST_ATUALIZAR_EVENTO = 1;
 
     private ListarParticipantesAdapter adapter;
     private TextView txtTitulo, txtData, txtHorario, txtFacilitador, txtDescricao;
     private int posicaoEvento;
-    private int posicaoParticipante;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +37,13 @@ public class DetalhesEvento extends Activity {
 
         if (bundleResult != null) {
             posicaoEvento = bundleResult.getInt(ListarEventos.POSICAO_EVENTO);
+            if (bundleResult.getBoolean(ListarEventosParaParticipante.ORIGEM_PARTICIPANTE)) {
+                btnEditarInfoEvento.setEnabled(false);
+            }
         }
 
         setInformacoes();
-        if (bundleResult.getBoolean(ListarEventosParaParticipante.ORIGEM_PARTICIPANTE)) {
-            btnEditarInfoEvento.setEnabled(false);
-        }
+
         adapter = new ListarParticipantesAdapter(Singleton.getInstance().getEventos().get(posicaoEvento).getParticipantes());
         rvParticipantesEvento.setLayoutManager(new LinearLayoutManager(this));
         rvParticipantesEvento.setAdapter(adapter);

@@ -27,8 +27,6 @@ public class MainActivity extends Activity {
     public static final String FACILITADOR = "FACILITADOR";
     public static final String DATA = "DATA";
     public static final String HORA = "HORA";
-    private RecyclerView rvMain;
-    private Button cadparticipante, cadevento, listeventos;
     private ListarParticipantesAdapter participanteAdapter;
 
     @Override
@@ -36,16 +34,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        rvMain = findViewById(R.id.rcl_View_Eventos);
-
+        RecyclerView rvMain = findViewById(R.id.rcl_View_Participantes);
         rvMain.setLayoutManager(new LinearLayoutManager(this));
-
         participanteAdapter = new ListarParticipantesAdapter(Singleton.getInstance().getParticipantes());
-
         rvMain.setAdapter(participanteAdapter);
-
-        cadparticipante = findViewById(R.id.btn_Cadastrar_Participante);
 
         participanteAdapter.setOnParticipanteClickListener(new ListarParticipantesAdapter.OnParticipanteClickListener() {
             @Override
@@ -63,6 +55,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button cadparticipante = findViewById(R.id.btn_Cadastrar_Participante);
         cadparticipante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +66,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        cadevento = findViewById(R.id.btn_Cadastrar_Evento);
+        Button cadevento = findViewById(R.id.btn_Cadastrar_Evento);
         cadevento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +75,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        listeventos = findViewById(R.id.btn_View_Eventos);
+        Button listeventos = findViewById(R.id.btn_View_Eventos);
         listeventos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,10 +83,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
-
     }
-
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -18,13 +18,9 @@ public class EditarParticipante extends Activity {
     public static final String POSICAO_PARTICIPANTE = "Posição Participante";
     public static final String POSICAO_EVENTO = "Posição Evento";
     private static final int REQUEST_CADASTRAR_EVENTO_PARTICIPANTE = 1;
-    private RecyclerView rvMeusEventos;
     private EditText nome;
     private EditText email;
     private EditText cpf;
-    private Button btnSalvar;
-    private Button btnNovoEvento;
-    private Button btnCancelar;
     private ListarMeusEventosAdapter adapter;
     private int posicaoParticipante;
     @Override
@@ -33,10 +29,12 @@ public class EditarParticipante extends Activity {
         setContentView(R.layout.activity_editar_participante);
         final Intent intent = getIntent();
         Bundle bundleResult = intent.getExtras();
-        posicaoParticipante = bundleResult.getInt(MainActivity.POSICAO_PARTICIPANTE);
+        if (bundleResult != null) {
+            posicaoParticipante = bundleResult.getInt(MainActivity.POSICAO_PARTICIPANTE);
+        }
 
 
-        rvMeusEventos = findViewById(R.id.rv_meus_eventos);
+        RecyclerView rvMeusEventos = findViewById(R.id.rv_meus_eventos);
         rvMeusEventos.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ListarMeusEventosAdapter(Singleton.getInstance().getParticipantes().get(posicaoParticipante).getEventos());
         rvMeusEventos.setAdapter(adapter);
@@ -44,9 +42,9 @@ public class EditarParticipante extends Activity {
         nome = findViewById(R.id.act_Att_participante_nome);
         email = findViewById(R.id.act_Att_participante_email);
         cpf = findViewById(R.id.act_Att_participante_cpf);
-        btnSalvar = findViewById(R.id.act_Att_participante_btnSalvar);
-        btnNovoEvento = findViewById(R.id.act_Att_participante_btnNovoEvento);
-        btnCancelar = findViewById(R.id.act_Att_participante_btnCancelar);
+        Button btnSalvar = findViewById(R.id.act_Att_participante_btnSalvar);
+        Button btnNovoEvento = findViewById(R.id.act_Att_participante_btnNovoEvento);
+        Button btnCancelar = findViewById(R.id.act_Att_participante_btnCancelar);
 
         nome.setText(Singleton.getInstance().getParticipantes().get(posicaoParticipante).getNome());
         email.setText(Singleton.getInstance().getParticipantes().get(posicaoParticipante).getEmail());

@@ -16,9 +16,7 @@ import java.util.ArrayList;
 public class ListarEventosParaParticipante extends Activity {
     public static final String ORIGEM_PARTICIPANTE = "Origem de onde foi chamada a activity";
     private ArrayList<Evento> eventos = new ArrayList<>();
-    private RecyclerView rvEventosParaParticipante;
     private int posicaoParticipante;
-    private ListaEventoParaParticipanteAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +24,13 @@ public class ListarEventosParaParticipante extends Activity {
         setContentView(R.layout.activity_listar_eventos_para_participante);
         final Intent intent = getIntent();
         Bundle bundleResult = intent.getExtras();
-        posicaoParticipante = bundleResult.getInt(EditarParticipante.POSICAO_PARTICIPANTE);
+        if (bundleResult != null) {
+            posicaoParticipante = bundleResult.getInt(EditarParticipante.POSICAO_PARTICIPANTE);
+        }
         instanciaEventos(posicaoParticipante);
-        rvEventosParaParticipante = findViewById(R.id.rv_listar_eventos_para_participante);
+        RecyclerView rvEventosParaParticipante = findViewById(R.id.rv_listar_eventos_para_participante);
         rvEventosParaParticipante.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ListaEventoParaParticipanteAdapter(eventos);
+        ListaEventoParaParticipanteAdapter adapter = new ListaEventoParaParticipanteAdapter(eventos);
         rvEventosParaParticipante.setAdapter(adapter);
         adapter.setOnEventoParaParticipanteClickListener(new ListaEventoParaParticipanteAdapter.OnEventoParaParticipanteClickListener() {
             @Override

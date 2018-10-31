@@ -16,7 +16,6 @@ public class EditarEvento extends Activity {
     private EditText horarioEvento;
     private EditText facilitadorEvento;
     private EditText descricaoEvento;
-    private Button btnOk;
     private int posicaoEvento;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +23,15 @@ public class EditarEvento extends Activity {
         setContentView(R.layout.activity_editar_evento);
         final Intent intent = getIntent();
         Bundle bundleResult = intent.getExtras();
-        posicaoEvento = bundleResult.getInt(DetalhesEvento.POSICAO_EVENTO, -1);
+        if (bundleResult != null) {
+            posicaoEvento = bundleResult.getInt(DetalhesEvento.POSICAO_EVENTO);
+        }
         nomeEvento = findViewById(R.id.act_att_Evento_Nome);
         dataEvento = findViewById(R.id.act_att_evento_Data);
         horarioEvento = findViewById(R.id.act_att_evento_Horario);
         facilitadorEvento = findViewById(R.id.act_att_evento_Facilitador);
         descricaoEvento = findViewById(R.id.act_att_evento_Descricao);
-        btnOk = findViewById(R.id.act_att_evento_btnOk);
+        Button btnOk = findViewById(R.id.act_att_evento_btnOk);
         setInformacoes();
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
