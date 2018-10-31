@@ -14,7 +14,6 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
     private ArrayList<Participante> participantes;
     private OnParticipanteClickListener listener;
 
-
     public interface OnParticipanteClickListener {
         void onParticipanteClick(View view, int position);
         void onLongParticipanteClick(View view, int position);
@@ -28,7 +27,6 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
         this.participantes = participantes;
 
     }
-
 
     @NonNull
     @Override
@@ -82,8 +80,6 @@ public class ListarParticipantesAdapter extends RecyclerView.Adapter<ListarParti
                     }
                 }
             });
-
-
         }
 
         @Override
